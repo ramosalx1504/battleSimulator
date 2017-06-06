@@ -4,7 +4,8 @@
 	"private": true,
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest"
+		"test": "jest",
+		"ejectTheme" : "node node_modules/native-base/ejectTheme.js"
 	},
 	"dependencies": {
 		"native-base": "^2.1.4",

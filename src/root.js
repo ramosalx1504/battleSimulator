@@ -4,13 +4,18 @@ import {createStore,applyMiddleware} from 'redux';
 import ReduxThunk from 'redux-thunk';
 import reducers from './data/reducers';
 import Router from './router';
-import {View,Text} from 'native-base'
-const initialStoreState = {}; 
+import {getTheme,StyleProvider} from 'native-base';
+import Theme from '../config/theme/nativeBaseTheme';
+
+const initialStoreState = {};
+
 var store = createStore(reducers, initialStoreState, applyMiddleware(ReduxThunk));
 
 const RootComponent = () => (
 	<Provider store={store}>
-		<Router/>
+		<StyleProvider style={getTheme(Theme)}>
+			<Router/>
+		</StyleProvider>
 	</Provider>
 );
 

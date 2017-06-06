@@ -5,11 +5,7 @@ class Detail extends React.Component {
 	render(){
 		return (
 			<View style={s.container}>
-				<Button>
-					<Text>
-						Back
-					</Text>
-				</Button>
+				
 			</View>
 		);
 	}

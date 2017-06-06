@@ -1,15 +1,13 @@
+import { appStyle } from 'simulador/config';
+
 export default {
-	container : {
-		flex:1,
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
+	container : appStyle.container.center,
 	btn:{
-		marginHorizontal: 54
+		marginHorizontal: appStyle.grid.x7
 	},
 	text:{
 		color:'white',
-		margin : 24,
-		fontSize: 21
+		margin : appStyle.grid.x7,
+		fontSize: appStyle.font.size.huge
 	}
 };
