@@ -11,14 +11,21 @@ export default {
     },
     color : {
       primary : 'black',
-      secondary : 'white'
+      secondary : 'white',
+      title : 'black'
     }
   },
   colors: {
-    primary: '#05A5D1',
+    primary: '#3F51B5',
     lightText: '#FAFAFA',
     background: '#F5FCFF',
     darkGray: '#333333',
+    brandPrimary: '#3F51B5',
+    brandInfo: '#12ADF2',
+    brandSuccess: '#5cb85c',
+    brandDanger: '#d9534f',
+    brandWarning: '#f0ad4e',
+    brandSidebar: '#252932',
   },
   grid: {
     x1: gridSize * 1,

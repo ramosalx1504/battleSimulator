@@ -1,25 +1,33 @@
 import React from 'react';
-import { View, Text, Button } from 'native-base';
 import {Actions as Router } from 'react-native-router-flux';
 import { Container } from 'simulador/src/components';
+import { Button, Text, View } from 'native-base';
 
-import s from './styles';
+/**
+ * Custom Components
+ */ import Dashboard from './components/Dashboard';
+ 	import Footer from './components/Footer';
+ 	import Header from './components/Header';
 
 class Main extends React.Component {
 
-	onBtnPress(){
-		Router.battle();
+	_handlePressButton( id ){
+		console.log(id);
 	}
 
 	render(){
 		return (
-			<Container box bottom>
-				<Text style={s.text}>
-					Probando navegación.
-				</Text>
-				<Button style={s.btn} block onPress={ () => this.onBtnPress() }>
-					<Text style={{color:'white'}}>Go to Detail page.</Text>
-				</Button>
+			<Container>
+				<Header text='Simulador de Batallas'/>
+				<Container box bottom>
+					<Dashboard
+					onNewBattlePress={()=> this._handlePressButton('newBattle')}
+					onOrdenJediPress={()=> this._handlePressButton('ordenJedi')}
+					onOrdenSithPress={()=> this._handlePressButton('ordenSith')}
+					onMoreInfoPress={()=> this._handlePressButton('moreInfo')}
+					/>
+				</Container>
+				<Footer />
 			</Container>
 		);
 	}
