@@ -49,5 +49,10 @@ export default {
       alignItems: 'center',
       justifyContent: 'center'
     },
+    border:{
+      radius : 4,
+      width : 1,
+      color: 'lightgray'
+    }
   }
 };
