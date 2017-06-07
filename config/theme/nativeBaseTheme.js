@@ -259,7 +259,7 @@ export default {
 
 
     // Text
-  textColor: '#000',
+  textColor: '#FFF',
   inverseTextColor: '#fff',
   noteFontSize: 14,
 

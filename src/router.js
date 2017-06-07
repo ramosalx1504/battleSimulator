@@ -8,10 +8,13 @@ import * as Pages from './pages';
 
 
 const RouterComponent = (props) => (
-	<Router hideNavBar={true} >
+	<Router hideNavBar={true} sceneStyle={{backgroundColor:'black'}} >
 		<Scene  key='main' component={Pages.Main} title='Main' initial={true} />
 		<Scene  key='detail' component={Pages.Detail} title='Detail' />
 		<Scene  key='battle' component={Pages.Battle} title='Battle' />
+		<Scene  key='about' component={Pages.Acerca} title='About' />
+		<Scene  key='jedi' component={Pages.Jedi} title='Jedi' />
+		<Scene  key='sith' component={Pages.Sith} title='Sith' />
 	</Router>
 );
 

@@ -10,9 +10,7 @@ const PjViewer = ({onJediPress,onShitPress}) => (
 		</Text>
 		<View style={s.list}>
 			<TouchableOpacity onPress={onJediPress} style={getStyle('jedi')}>
-				<Text style={s.subtitle}>
-					Orden Jedi
-				</Text>
+				<Text>{'Orden JEDI'}</Text>
 				<Thumbnail
 					style={s.tumb}  
 					large
@@ -21,9 +19,7 @@ const PjViewer = ({onJediPress,onShitPress}) => (
 					source={require('simulador/assets/logos/jediLogo.png')} />
 			</TouchableOpacity>
 			<TouchableOpacity onPress={onShitPress} style={getStyle('sith')}>
-				<Text style={s.subtitle}>
-					Orden Sith
-				</Text>
+				<Text>{'Orden SITH'}</Text>
 				<Thumbnail 
 					style={s.tumb} 
 					large
@@ -80,9 +76,5 @@ const s = {
 		marginVertical: appStyle.grid.x1,
 		paddingBottom:4,
 		color:'white'
-	},
-	subtitle:{
-		color:'white',
-
 	}
 };

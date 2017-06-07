@@ -14,7 +14,16 @@ import { appStyle } from 'simulador/config';
 class Main extends React.Component {
 
 	_handlePressButton( id ){
-		console.log(id);
+		switch(id){
+			case 'newBattle' :
+				return Router.battle();
+			case 'moreInfo' :
+				return Router.about();
+			case 'ordenJedi' :
+				return Router.jedi();
+			case 'ordenSith' :
+				return Router.sith();
+		}
 	}
 
 	render(){
