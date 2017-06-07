@@ -50,7 +50,10 @@ const s = {
 	},
 	list:{
 		flexDirection:'row',
-		paddingLeft: appStyle.grid.x2
+		paddingLeft: appStyle.grid.x2,
+		borderTopColor:'rgba(256,256,256,0.3)',
+		borderTopWidth:1,
+		paddingTop: appStyle.grid.x2,
 	},
 	btnList : {
 		flex:1,
@@ -61,6 +64,7 @@ const s = {
 		borderRadius : appStyle.container.border.radius,
 		borderWidth : appStyle.container.border.width,
 		borderColor : appStyle.colors.primary,
+		elevation:3
 	},
 	sith:{
 		backgroundColor:appStyle.colors.sith,

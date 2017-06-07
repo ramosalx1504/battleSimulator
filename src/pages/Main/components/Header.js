@@ -17,10 +17,14 @@ const s = {
 		alignItems: 'center',
 		justifyContent: 'center',
 		backgroundColor: appStyle.colors.dark,
-		height:100
+		height:appStyle.dimensions.height/5,
+		elevation:3
 	},	
 	text:{
 		fontSize : appStyle.font.size.huge,
-		color: 'white'
+		color: 'white',
+		textShadowColor : 'black',
+		textShadowOffset : {width: 0, height: 2},
+		textShadowRadius : 3
 	}
 };
