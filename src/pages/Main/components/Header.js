@@ -16,7 +16,7 @@ const s = {
 	container : {
 		alignItems: 'center',
 		justifyContent: 'center',
-		backgroundColor: appStyle.colors.primary,
+		backgroundColor: appStyle.colors.dark,
 		height:100
 	},	
 	text:{

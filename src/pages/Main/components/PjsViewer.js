@@ -9,7 +9,7 @@ const PjViewer = ({onJediPress,onShitPress}) => (
 			PERSONAJES
 		</Text>
 		<View style={s.list}>
-			<TouchableOpacity onPress={onJediPress} style={s.btnList}>
+			<TouchableOpacity onPress={onJediPress} style={getStyle('jedi')}>
 				<Text style={s.subtitle}>
 					Orden Jedi
 				</Text>
@@ -20,7 +20,7 @@ const PjViewer = ({onJediPress,onShitPress}) => (
 					square 
 					source={require('simulador/assets/logos/jediLogo.png')} />
 			</TouchableOpacity>
-			<TouchableOpacity onPress={onShitPress} style={s.btnList}>
+			<TouchableOpacity onPress={onShitPress} style={getStyle('sith')}>
 				<Text style={s.subtitle}>
 					Orden Sith
 				</Text>
@@ -34,6 +34,10 @@ const PjViewer = ({onJediPress,onShitPress}) => (
 		</View>
 	</View>
 ); 
+
+const getStyle = (key) => {
+	return Object.assign({},s.btnList,s[key]);
+}
 
 export default PjViewer;
 
@@ -52,12 +56,17 @@ const s = {
 		flex:1,
 		alignItems: 'center',
 		padding: appStyle.grid.x1,
-		backgroundColor:'white',
 		marginBottom: appStyle.grid.x2,
 		marginRight: appStyle.grid.x2,
 		borderRadius : appStyle.container.border.radius,
 		borderWidth : appStyle.container.border.width,
 		borderColor : appStyle.colors.primary,
+	},
+	sith:{
+		backgroundColor:appStyle.colors.sith,
+	},
+	jedi:{
+		backgroundColor:appStyle.colors.jedi,
 	},
 	tumb : {
 		resizeMode:'contain'
@@ -67,5 +76,9 @@ const s = {
 		marginVertical: appStyle.grid.x1,
 		paddingBottom:4,
 		color:'white'
+	},
+	subtitle:{
+		color:'white',
+
 	}
 };

@@ -8,7 +8,7 @@ import { appStyle } from 'simulador/config';
 
 const Dashboard = ({onNewBattlePress,onMoreInfoPress,onOrdenJediPress,onOrdenSithPress}) => (
 	<View style={s.container}>
-		<Button onPress={onNewBattlePress} block>
+		<Button onPress={onNewBattlePress} info block>
 			<Text>
 				Nueva Batalla
 			</Text>
@@ -17,7 +17,7 @@ const Dashboard = ({onNewBattlePress,onMoreInfoPress,onOrdenJediPress,onOrdenSit
 			onJediPress={onOrdenJediPress}
 			onShitPress={onOrdenSithPress}
 		/>
-		<Button bordered onPress={onMoreInfoPress} block>
+		<Button onPress={onMoreInfoPress} info block>
 			<Text>
 				Acerca del Simulador
 			</Text>

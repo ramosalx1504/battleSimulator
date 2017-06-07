@@ -2,6 +2,8 @@ import React from 'react';
 import {Actions as Router } from 'react-native-router-flux';
 import { Container } from 'simulador/src/components';
 import { Button, Text, View } from 'native-base';
+import { Image } from 'react-native';
+import { appStyle } from 'simulador/config';
 
 /**
  * Custom Components
@@ -17,8 +19,8 @@ class Main extends React.Component {
 
 	render(){
 		return (
-			<Container>
-				<Header text='Simulador de Batallas'/>
+			<Image style={style.img} source={require('simulador/assets/background.jpg')}>
+				<Header text='SIMULADOR DE BATALLAS'/>
 				<Container box bottom>
 					<Dashboard
 					onNewBattlePress={()=> this._handlePressButton('newBattle')}
@@ -27,10 +29,18 @@ class Main extends React.Component {
 					onMoreInfoPress={()=> this._handlePressButton('moreInfo')}
 					/>
 				</Container>
-				<Footer />
-			</Container>
+				
+			</Image>
 		);
 	}
 }
 
 export default Main;
+
+const style = {
+	img: {
+		width: appStyle.dimensions.width,
+		height : appStyle.dimensions.height - 24,
+		resizeMode : 'cover'
+	}
+};

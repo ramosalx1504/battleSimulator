@@ -5,21 +5,21 @@ import { appStyle } from 'simulador/config';
 const Footer = ({}) => (
 	<View style={s.container}>
 		<View style={s.item}>
-			<Button block>
+			<Button info block>
 				<Text>
 					Historial
 				</Text>
 			</Button>
 		</View>
 		<View style={s.item}>
-			<Button block>
+			<Button info block>
 				<Text>
 					Button
 				</Text>
 			</Button>
 		</View>
 		<View style={s.item}>
-			<Button block>
+			<Button info block>
 				<Text>
 					Button
 				</Text>

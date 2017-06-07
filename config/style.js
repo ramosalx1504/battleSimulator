@@ -1,3 +1,8 @@
+import { Dimensions } from 'react-native';
+
+const deviceHeight = Dimensions.get('window').height;
+const deviceWidth = Dimensions.get('window').width;
+
 const gridSize = 8;
 
 export default {
@@ -16,7 +21,8 @@ export default {
     }
   },
   colors: {
-    primary: '#3F51B5',
+    primary: 'rgba(0,30,79,0.6)',
+    dark: 'rgba(0,0,0,0.2)',
     lightText: '#FAFAFA',
     background: '#F5FCFF',
     darkGray: '#333333',
@@ -26,6 +32,9 @@ export default {
     brandDanger: '#d9534f',
     brandWarning: '#f0ad4e',
     brandSidebar: '#252932',
+    sith: 'rgba(255,19,19,0.4)',
+    jedi: 'rgba(41,208,254,0.4)',
+    jediGreen : 'rgba(99,229,71,0.9)',
   },
   grid: {
     x1: gridSize * 1,
@@ -45,6 +54,8 @@ export default {
   dimensions: {
     touchableHeight: 48,
     visibleButtonHeight: 36,
+    width : deviceWidth,
+    height : deviceHeight
   },
   router:{
     paddingTop:54,
