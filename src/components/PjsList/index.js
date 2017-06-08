@@ -1,15 +1,8 @@
 import React from 'react';
 import { View,Text,Card,CardItem,Left,Body,Right,Thumbnail } from 'native-base';
-import { ListView, Image } from 'react-native';
+import { ListView, Image,FlatList } from 'react-native';
 
-class  PjsList extends React.Component {
-	constructor(props) {
-		super(props);
-
-		const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-
-		this.state = {
-			dataSource: ds.cloneWithRows([{
+const data = [{
 				name:'Yoda',
 				description:'Midiendo 66 centímetros, Yoda fue un representante masculino de una especie',
 				logo:require('simulador/assets/logos/sithLogo.png'),
@@ -33,9 +26,10 @@ class  PjsList extends React.Component {
 					strench:20,
 					smart:5
 				}
-			}])
-		};
-	}
+			}];
+
+class  PjsList extends React.Component {
+
 	renderRow(rowData){
 		return (
 			<Card>
@@ -55,14 +49,19 @@ class  PjsList extends React.Component {
 			</Card>
 		);
 	}
-	render(){
-		return (
-			<View style={s.container}>
-				<Text>PJCOMPONEN</Text>
-				<ListView
+	backup(){
+		<ListView
 					initialListSize={3}
 					dataSource={this.state.dataSource}
         			renderRow={(rowData) => this.renderRow(rowData)}
+				/>
+	}
+	render(){
+		return (
+			<View style={s.container}>
+				<FlatList
+				  data={data}
+				  renderItem={({item}) => this.renderRow(item) }
 				/>
 			</View>
 		);

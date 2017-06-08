@@ -1,0 +1,246 @@
+{
+	"jedis": [
+		{
+			"nombre":"",
+			"orden":"jedi",
+			"descripcion":"",
+			"atributos":{
+				"ataque":{
+					"fallar":0,
+					"acertar":1
+				},
+				"tiposDeAtaque":{
+
+				},
+				"defensa":{
+
+				},
+				"habilidades":{
+					"fuerza":0,
+					"velocidad":0,
+					"inteligencia":0,
+					"resistencia":0
+				}
+			}
+
+		},
+		{
+			"nombre":"",
+			"orden":"jedi",
+			"descripcion":"",
+			"atributos":{
+				"ataque":{
+					"fallar":0,
+					"acertar":1
+				},
+				"tiposDeAtaque":{
+
+				},
+				"defensa":{
+
+				},
+				"habilidades":{
+					"fuerza":0,
+					"velocidad":0,
+					"inteligencia":0,
+					"resistencia":0
+				}
+			}
+
+		},
+		{
+			"nombre":"",
+			"orden":"jedi",
+			"descripcion":"",
+			"atributos":{
+				"ataque":{
+					"fallar":0,
+					"acertar":1
+				},
+				"tiposDeAtaque":{
+
+				},
+				"defensa":{
+
+				},
+				"habilidades":{
+					"fuerza":0,
+					"velocidad":0,
+					"inteligencia":0,
+					"resistencia":0
+				}
+			}
+
+		},
+		{
+			"nombre":"",
+			"orden":"jedi",
+			"descripcion":"",
+			"atributos":{
+				"ataque":{
+					"fallar":0,
+					"acertar":1
+				},
+				"tiposDeAtaque":{
+
+				},
+				"defensa":{
+
+				},
+				"habilidades":{
+					"fuerza":0,
+					"velocidad":0,
+					"inteligencia":0,
+					"resistencia":0
+				}
+			}
+
+		},
+		{
+			"nombre":"",
+			"orden":"jedi",
+			"descripcion":"",
+			"atributos":{
+				"ataque":{
+					"fallar":0,
+					"acertar":1
+				},
+				"tiposDeAtaque":{
+
+				},
+				"defensa":{
+
+				},
+				"habilidades":{
+					"fuerza":0,
+					"velocidad":0,
+					"inteligencia":0,
+					"resistencia":0
+				}
+			}
+
+		}
+	],
+	"siths": [
+		{
+			"nombre":"",
+			"orden":"",
+			"descripcion":"",
+			"atributos":{
+				"ataque":{
+					"fallar":0,
+					"acertar":1
+				},
+				"tiposDeAtaque":{
+
+				},
+				"defensa":{
+
+				},
+				"habilidades":{
+					"fuerza":0,
+					"velocidad":0,
+					"inteligencia":0,
+					"resistencia":0
+				}
+			}
+
+		},
+		{
+			"nombre":"",
+			"orden":"",
+			"descripcion":"",
+			"atributos":{
+				"ataque":{
+					"fallar":0,
+					"acertar":1
+				},
+				"tiposDeAtaque":{
+
+				},
+				"defensa":{
+
+				},
+				"habilidades":{
+					"fuerza":0,
+					"velocidad":0,
+					"inteligencia":0,
+					"resistencia":0
+				}
+			}
+
+		},
+		{
+			"nombre":"",
+			"orden":"",
+			"descripcion":"",
+			"atributos":{
+				"ataque":{
+					"fallar":0,
+					"acertar":1
+				},
+				"tiposDeAtaque":{
+
+				},
+				"defensa":{
+
+				},
+				"habilidades":{
+					"fuerza":0,
+					"velocidad":0,
+					"inteligencia":0,
+					"resistencia":0
+				}
+			}
+
+		},
+		{
+			"nombre":"",
+			"orden":"",
+			"descripcion":"",
+			"atributos":{
+				"ataque":{
+					"fallar":0,
+					"acertar":1
+				},
+				"tiposDeAtaque":{
+
+				},
+				"defensa":{
+
+				},
+				"habilidades":{
+					"fuerza":0,
+					"velocidad":0,
+					"inteligencia":0,
+					"resistencia":0
+				}
+			}
+
+		},
+		{
+			"nombre":"",
+			"orden":"",
+			"descripcion":"",
+			"atributos":{
+				"ataque":{
+					"fallar":0,
+					"acertar":1
+				},
+				"tiposDeAtaque":{
+
+				},
+				"defensa":{
+
+				},
+				"habilidades":{
+					"fuerza":0,
+					"velocidad":0,
+					"inteligencia":0,
+					"resistencia":0
+				}
+			}
+
+		}
+	]
+}
