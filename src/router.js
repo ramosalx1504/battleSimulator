@@ -15,6 +15,7 @@ const RouterComponent = (props) => (
 		<Scene  key='about' component={Pages.Acerca} title='About' />
 		<Scene  key='jedi' component={Pages.Tabs} title='Jedi' origin='Jedi' passProps={true} />
 		<Scene  key='sith' component={Pages.Tabs} title='Sith' origin='Sith' passProps={true} />
+		<Scene  key='simulation' component={Pages.Simulation} title='Simulation' />
 	</Router>
 );
 

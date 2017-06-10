@@ -3,3 +3,4 @@ export { default as Detail } from './Detail';
 export { default as Battle } from './Battle';
 export { default as Acerca } from './Acerca';
 export { default as Tabs } from './Tabs';
+export { default as Simulation } from './Simulation';

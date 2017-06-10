@@ -1,244 +1,515 @@
 {
 	"jedis": [
 		{
-			"nombre":"",
-			"orden":"jedi",
-			"descripcion":"",
-			"atributos":{
-				"ataque":{
-					"fallar":0,
-					"acertar":1
-				},
-				"tiposDeAtaque":{
-
-				},
-				"defensa":{
-
-				},
-				"habilidades":{
-					"fuerza":0,
-					"velocidad":0,
-					"inteligencia":0,
+			"id":1,
+			"nombre":"Yoda",
+			"orden":"Jedi",
+			"descripcion":"Yoda",
+			"habilidades":{
+				"fuerza":5,
+				"resistencia":3,
+				"velocidad":5,
+				"inteligencia":5,
+			},
+			"ataque":{
+				"acertar":0.95,
+				"fallar":0.05,
+			},
+			"tiposDeAtaque":[{
+				"nombre":"Golpe con sable",
+				"probabilidad":0.40,
+				"daño":10
+			},{
+				"nombre":"Empuje de la Fuerza",
+				"probabilidad":0.35,
+				"daño":15
+			},{
+				"nombre":"Control mental",
+				"probabilidad":0.25,
+				"daño":30
+			}],
+			"defensa":[
+				{
+					"nombre":"Impacto directo",
+					"probabilidad":0.30,
 					"resistencia":0
+				},{
+					"nombre":"Dispersión",
+					"probabilidad":0.50,
+					"resistencia":10
+				},{
+					"nombre":"Percepción",
+					"probabilidad":0.20,
+					"resistencia":20
 				}
+			],
+			"critico":{
+				"nombre":"Meditación de batalla",
+				"acertar":0.30,
+				"fallar":0.70,
+				"daño":50,
+				"descripcion":""
+			}
+
+		},
+		{	
+			"id":2,
+			"nombre":"Windu",
+			"orden":"Jedi",
+			"descripcion":"Windu",
+			"habilidades":{
+				"fuerza":5,
+				"resistencia":5,
+				"velocidad":4,
+				"inteligencia":4,
+			},
+			"ataque":{
+				"acertar":0.80,
+				"fallar":0.20,
+			},
+			"tiposDeAtaque":[{
+					"nombre":"Golpe con sable",
+					"probabilidad":0.45,
+					"daño":10
+				},{
+					"nombre":"Ver puntos de Ruptura",
+					"probabilidad":0.45,
+					"daño":30
+				},{
+					"nombre":"Estrujón con la Fuerza",
+					"probabilidad":0.10,
+					"daño":40
+				}],
+			"defensa":[
+				{
+					"nombre":"Impacto directo",
+					"probabilidad":0.30,
+					"resistencia":5
+				},{
+					"nombre":"Dispersión",
+					"probabilidad":0.50,
+					"resistencia":15
+				},{
+					"nombre":"Percepción",
+					"probabilidad":0.20,
+					"resistencia":25
+				}
+			],
+			"critico":{
+				"nombre":"Aniquilacion con la Fuerza",
+				"acertar":0.20,
+				"fallar":0.80,
+				"daño":60,
+				"descripcion":"Demasiado Poderoso"
 			}
 
 		},
 		{
-			"nombre":"",
-			"orden":"jedi",
-			"descripcion":"",
-			"atributos":{
-				"ataque":{
-					"fallar":0,
-					"acertar":1
-				},
-				"tiposDeAtaque":{
-
-				},
-				"defensa":{
-
-				},
-				"habilidades":{
-					"fuerza":0,
-					"velocidad":0,
-					"inteligencia":0,
+			"nombre":"Luke",
+			"orden":"Jedi",
+			"descripcion":"Luke",
+			"habilidades":{
+				"fuerza":5,
+				"resistencia":5,
+				"velocidad":5,
+				"inteligencia":2,
+			},
+			"ataque":{
+				"acertar":0.70,
+				"fallar":0.30,
+			},
+			"tiposDeAtaque":[{
+				"nombre":"Golpe con sable",
+				"probabilidad":0.60,
+				"daño":10
+			},{
+				"nombre":"Juicio Eléctrico",
+				"probabilidad":0.30,
+				"daño":30
+			},{
+				"nombre":"Tormenta de Fuerza",
+				"probabilidad":0.10,
+				"daño":40
+			}],
+			"defensa":[
+				{
+					"nombre":"Impacto directo",
+					"probabilidad":0.50,
 					"resistencia":0
+				},{
+					"nombre":"Escudo",
+					"probabilidad":0.35,
+					"resistencia":20
+				},{
+					"nombre":"Corazón de la Fuerza",
+					"probabilidad":0.15,
+					"resistencia":100
 				}
+			],
+			"critico":{
+				"nombre":"Agujero Negro",
+				"acertar": 0.10,
+				"fallar": 0.90,
+				"daño": 100,
+				"descripcion":"Letal"
 			}
 
 		},
 		{
-			"nombre":"",
-			"orden":"jedi",
-			"descripcion":"",
-			"atributos":{
-				"ataque":{
-					"fallar":0,
-					"acertar":1
-				},
-				"tiposDeAtaque":{
-
-				},
-				"defensa":{
-
-				},
-				"habilidades":{
-					"fuerza":0,
-					"velocidad":0,
-					"inteligencia":0,
+			"nombre":"Obi-Wan",
+			"orden":"Jedi",
+			"descripcion":"Obi-Wan",
+			"habilidades":{
+				"fuerza":4,
+				"resistencia":5,
+				"velocidad":3,
+				"inteligencia":4,
+			},
+			"ataque":{
+				"acertar":0.90,
+				"fallar":0.10,
+			},
+			"tiposDeAtaque":[{
+				"nombre":"Golpe con sable",
+				"probabilidad":0.40,
+				"daño":10
+			},{
+				"nombre":"Persuasión de la Fuerza",
+				"probabilidad":0.30,
+				"daño":15
+			},{
+				"nombre":"Grito de la Fuerza",
+				"probabilidad":0.30,
+				"daño":25
+			}],
+			"defensa":[
+				{
+					"nombre":"Impacto directo",
+					"probabilidad":0.20,
 					"resistencia":0
+				},{
+					"nombre":"Control de la respiración",
+					"probabilidad":0.30,
+					"resistencia":20
+				},{
+					"nombre":"Soresu",
+					"probabilidad":0.50,
+					"resistencia":100
 				}
+			],
+			"critico":{
+				"nombre":"Dominar la mente",
+				"acertar":0.15,
+				"fallar":0.85,
+				"daño": 0,
+				"descripcion":"Empate: el Sith deja el lado oscuro!"
 			}
 
 		},
 		{
-			"nombre":"",
-			"orden":"jedi",
-			"descripcion":"",
-			"atributos":{
-				"ataque":{
-					"fallar":0,
-					"acertar":1
-				},
-				"tiposDeAtaque":{
-
-				},
-				"defensa":{
-
-				},
-				"habilidades":{
-					"fuerza":0,
-					"velocidad":0,
-					"inteligencia":0,
+			"nombre":"Qui-Gon Jinn",
+			"orden":"Jedi",
+			"descripcion":"Qui-Gon Jinn",
+			"habilidades":{
+				"fuerza":4,
+				"resistencia":3,
+				"velocidad":3,
+				"inteligencia":5,
+			},
+			"ataque":{
+				"acertar":0.85,
+				"fallar":0.15,
+			},
+			"tiposDeAtaque":[{
+				"nombre":"Golpe con sable",
+				"probabilidad":0.40,
+				"daño":10
+			},{
+				"nombre":"Persuasión de la Fuerza",
+				"probabilidad":0.30,
+				"daño":15
+			},{
+				"nombre":"Fuerza viva",
+				"probabilidad":0.30,
+				"daño":25
+			}],
+			"defensa":[
+				{
+					"nombre":"Impacto directo",
+					"probabilidad":0.50,
 					"resistencia":0
+				},{
+					"nombre":"Bloqueo con Sable",
+					"probabilidad":0.30,
+					"resistencia":20
+				},{
+					"nombre":"Meditación",
+					"probabilidad":0.20,
+					"resistencia":50
 				}
+			],
+			"critico":{
+				"nombre":"Fantasma de la Fuerza",
+				"acertar":0.15,
+				"fallar":0.85,
+				"daño":0,
+				"descripcion":"Empate: Qui-Gon se unió con la Fuerza!"
 			}
-
-		},
-		{
-			"nombre":"",
-			"orden":"jedi",
-			"descripcion":"",
-			"atributos":{
-				"ataque":{
-					"fallar":0,
-					"acertar":1
-				},
-				"tiposDeAtaque":{
-
-				},
-				"defensa":{
-
-				},
-				"habilidades":{
-					"fuerza":0,
-					"velocidad":0,
-					"inteligencia":0,
-					"resistencia":0
-				}
-			}
-
 		}
 	],
 	"siths": [
 		{
-			"nombre":"",
-			"orden":"",
-			"descripcion":"",
-			"atributos":{
-				"ataque":{
-					"fallar":0,
-					"acertar":1
-				},
-				"tiposDeAtaque":{
-
-				},
-				"defensa":{
-
-				},
-				"habilidades":{
-					"fuerza":0,
-					"velocidad":0,
-					"inteligencia":0,
+			"nombre":"Palpatine",
+			"orden":"Sith",
+			"descripcion":"Palpatine, también conocido como Darth Sidious, fue el último Canciller de la",
+			"habilidades":{
+				"fuerza":5,
+				"resistencia":2,
+				"velocidad":4,
+				"inteligencia":5,
+			},
+			"ataque":{
+				"acertar":0.85,
+				"fallar":0.15,
+			},
+			"tiposDeAtaque":[{
+				"nombre":"Golpe con sable",
+				"probabilidad":0.40,
+				"daño":10
+			},{
+				"nombre":"Tormenta de la Fuerza",
+				"probabilidad":0.30,
+				"daño":25
+			},{
+				"nombre":"Rayo de la Fuerza",
+				"probabilidad":0.30,
+				"daño":35
+			}],
+			"defensa":[
+				{
+					"nombre":"Impacto directo",
+					"probabilidad":0.40,
 					"resistencia":0
+				},{
+					"nombre":"Cortar la Fuerza",
+					"probabilidad":0.30,
+					"resistencia":90
+				},{
+					"nombre":"Encubrimiento de la Fuerza",
+					"probabilidad":0.30,
+					"resistencia":100
 				}
+			],
+			"critico":{
+				"nombre":"Sobrevivencia",
+				"acertar":0.30,
+				"fallar":0.70,
+				"daño":70,
+				"descripcion":""
 			}
 
 		},
 		{
-			"nombre":"",
-			"orden":"",
-			"descripcion":"",
-			"atributos":{
-				"ataque":{
-					"fallar":0,
-					"acertar":1
-				},
-				"tiposDeAtaque":{
-
-				},
-				"defensa":{
-
-				},
-				"habilidades":{
-					"fuerza":0,
-					"velocidad":0,
-					"inteligencia":0,
-					"resistencia":0
+			"nombre":"Darth Vader",
+			"orden":"Sith",
+			"descripcion":"Darth Vader",
+			"habilidades":{
+				"fuerza":5,
+				"resistencia":5,
+				"velocidad":2,
+				"inteligencia":3,
+			},
+			"ataque":{
+				"acertar":0.40,
+				"fallar":0.60,
+			},
+			"tiposDeAtaque":[{
+				"nombre":"Golpe con sable",
+				"probabilidad":0.40,
+				"daño":25
+			},{
+				"nombre":"Fuerza de agarre",
+				"probabilidad":0.30,
+				"daño":40
+			},{
+				"nombre":"Furia de la Fuerza",
+				"probabilidad":0.30,
+				"daño":50
+			}],
+			"defensa":[
+				{
+					"nombre":"Impacto directo",
+					"probabilidad":0.40,
+					"resistencia":15
+				},{
+					"nombre":"Mantenerse a la espera",
+					"probabilidad":0.30,
+					"resistencia":40
+				},{
+					"nombre":"Soresu",
+					"probabilidad":0.30,
+					"resistencia":80
 				}
+			],
+			"critico":{
+				"nombre":"Estrangulamiento",
+				"acertar":0.10,
+				"fallar":0.90,
+				"daño":100,
+				"descripcion":"Vader gana!"
 			}
 
 		},
 		{
-			"nombre":"",
-			"orden":"",
-			"descripcion":"",
-			"atributos":{
-				"ataque":{
-					"fallar":0,
-					"acertar":1
-				},
-				"tiposDeAtaque":{
-
-				},
-				"defensa":{
-
-				},
-				"habilidades":{
-					"fuerza":0,
-					"velocidad":0,
-					"inteligencia":0,
+			"nombre":"Dooku",
+			"orden":"Sith",
+			"descripcion":"Dooku",
+			"habilidades":{
+				"fuerza":4,
+				"resistencia":3,
+				"velocidad":4,
+				"inteligencia":4,
+			},
+			"ataque":{
+				"acertar":0.80,
+				"fallar":0.20,
+			},
+			"tiposDeAtaque":[{
+				"nombre":"Golpe con sable",
+				"probabilidad":0.50,
+				"daño":10
+			},{
+				"nombre":"Envenenar",
+				"probabilidad":0.30,
+				"daño":15
+			},{
+				"nombre":"Rayos de la Fuerza",
+				"probabilidad":0.20,
+				"daño":30
+			}],
+			"defensa":[
+				{
+					"nombre":"Impacto directo",
+					"probabilidad":0.40,
+					"resistencia":0
+				},{
+					"nombre":"Bloqueo con sable",
+					"probabilidad":0.30,
+					"resistencia":0
+				},{
+					"nombre":"Truco mental",
+					"probabilidad":0.30,
 					"resistencia":0
 				}
+			],
+			"critico":{
+				"nombre":"Curar con la fuerza",
+				"acertar":0.20,
+				"fallar":0.80,
+				"daño": -50,
+				"descripcion":""
 			}
 
 		},
 		{
-			"nombre":"",
-			"orden":"",
-			"descripcion":"",
-			"atributos":{
-				"ataque":{
-					"fallar":0,
-					"acertar":1
-				},
-				"tiposDeAtaque":{
-
-				},
-				"defensa":{
-
-				},
-				"habilidades":{
-					"fuerza":0,
-					"velocidad":0,
-					"inteligencia":0,
+			"nombre":"Darth Maul",
+			"orden":"Sith",
+			"descripcion":"Darth Maul",
+			"habilidades":{
+				"fuerza":5,
+				"resistencia":3,
+				"velocidad":5,
+				"inteligencia":2,
+			},
+			"ataque":{
+				"acertar":0.60,
+				"fallar":0.40,
+			},
+			"tiposDeAtaque":[{
+				"nombre":"Golpe con sable",
+				"probabilidad":0.40,
+				"daño":15
+			},{
+				"nombre":"Segunda hoja",
+				"probabilidad":0.40,
+				"daño":15
+			},{
+				"nombre":"Furia Sith",
+				"probabilidad":0.20,
+				"daño":30
+			}],
+			"defensa":[
+				{
+					"nombre":"Impacto directo",
+					"probabilidad":0,
 					"resistencia":0
+				},{
+					"nombre":"Bloqueo con Sable",
+					"probabilidad":0,
+					"resistencia":15
+				},{
+					"nombre":"Salto",
+					"probabilidad":0,
+					"resistencia":100
 				}
+			],
+			"critico":{
+				"nombre":"Clonación",
+				"acertar":0.10,
+				"fallar":0.90,
+				"daño":-100,
+				"descripcion":""
 			}
 
 		},
 		{
-			"nombre":"",
-			"orden":"",
-			"descripcion":"",
-			"atributos":{
-				"ataque":{
-					"fallar":0,
-					"acertar":1
-				},
-				"tiposDeAtaque":{
-
-				},
-				"defensa":{
-
-				},
-				"habilidades":{
-					"fuerza":0,
-					"velocidad":0,
-					"inteligencia":0,
+			"nombre":"Darth Plagueis",
+			"orden":"Sith",
+			"descripcion":"Darth Plagueis",
+			"habilidades":{
+				"fuerza":5,
+				"resistencia":4,
+				"velocidad":3,
+				"inteligencia":4,
+			},
+			"ataque":{
+				"acertar":0.90,
+				"fallar":0.10,
+			},
+			"tiposDeAtaque":[{
+				"nombre":"Golpe con sable",
+				"probabilidad":0.50,
+				"daño":10
+			},{
+				"nombre":"Control mental",
+				"probabilidad":0.40,
+				"daño":25
+			},{
+				"nombre":"Manipulación de los midiclorianos",
+				"probabilidad":0.10,
+				"daño":70
+			}],
+			"defensa":[
+				{
+					"nombre":"Impacto directo",
+					"probabilidad":0.70,
 					"resistencia":0
+				},{
+					"nombre":"Percepción",
+					"probabilidad":0.20,
+					"resistencia":30
+				},{
+					"nombre":"Concentración",
+					"probabilidad":0.10,
+					"resistencia":100
 				}
+			],
+			"critico":{
+				"nombre":"All Die",
+				"acertar":0.20,
+				"fallar":0.80,
+				"daño":0,
+				"descripcion":"Empate: ambos caen en batalla"
 			}
 
 		}
