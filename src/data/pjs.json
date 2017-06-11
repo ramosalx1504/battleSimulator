@@ -105,6 +105,7 @@
 
 		},
 		{
+			"id":3,
 			"nombre":"Luke",
 			"orden":"Jedi",
 			"descripcion":"Luke",
@@ -156,6 +157,7 @@
 
 		},
 		{
+			"id":4,
 			"nombre":"Obi-Wan",
 			"orden":"Jedi",
 			"descripcion":"Obi-Wan",
@@ -207,6 +209,7 @@
 
 		},
 		{
+			"id":5,
 			"nombre":"Qui-Gon Jinn",
 			"orden":"Jedi",
 			"descripcion":"Qui-Gon Jinn",
@@ -259,6 +262,7 @@
 	],
 	"siths": [
 		{
+			"id":6,
 			"nombre":"Palpatine",
 			"orden":"Sith",
 			"descripcion":"Palpatine, también conocido como Darth Sidious, fue el último Canciller de la",
@@ -310,6 +314,7 @@
 
 		},
 		{
+			"id":7,
 			"nombre":"Darth Vader",
 			"orden":"Sith",
 			"descripcion":"Darth Vader",
@@ -361,6 +366,7 @@
 
 		},
 		{
+			"id":8,
 			"nombre":"Dooku",
 			"orden":"Sith",
 			"descripcion":"Dooku",
@@ -412,6 +418,7 @@
 
 		},
 		{
+			"id":9,
 			"nombre":"Darth Maul",
 			"orden":"Sith",
 			"descripcion":"Darth Maul",
@@ -463,6 +470,7 @@
 
 		},
 		{
+			"id":10,
 			"nombre":"Darth Plagueis",
 			"orden":"Sith",
 			"descripcion":"Darth Plagueis",
