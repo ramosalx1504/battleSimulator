@@ -18,6 +18,7 @@ class Simulator {
 		this.turnDuration = Settings.simulation.turn.duration;
 		this.players = new PjManager( idPersonaje1, idPersonaje2);
 		this.onFinishCallback = onFinishCallback;
+		this.onTurnFinishCallback = null;
 	}
 
 	getTurno(){
@@ -26,20 +27,55 @@ class Simulator {
 
 	start( callback ){
 
+		this.onTurnFinishCallback = callback;
+
 		this.simulation = setInterval(()=>{
 
-			callback({
+			// callback({
+			// 	turno : this.turn,
+			// 	pjsState:{
+			// 		pj1:{
+			// 			'life':Math.random()
+			// 		},
+			// 		pj2:{
+			// 			'life':Math.random()
+			// 		}
+			// 	},
+			// 	atancante: {
+			// 		nombre:'Yoda',
+			// 		ataque:'Golpe con sable',
+			// 	},
+			// 	defensor:{
+			// 		nombre :'dart',
+			// 		defensa: 'falla',
+			// 	},
+			// 	resultado:{
+			// 		battleStatus : 'runing',
+			// 	}
+			// });
+
+			this.players.simulateTurn(this.turn,this.onSimulateTurn.bind(this));
+
+			this.validateBattleState();
+
+		//},this.turnDuration);
+		},1000);
+	}
+
+	onSimulateTurn(data){
+
+		this.onTurnFinishCallback({
 				turno : this.turn,
 				pjsState:{
 					pj1:{
-						'vida':0.2
+						'life':Math.random()
 					},
 					pj2:{
-						'vida':0.2
+						'life':Math.random()
 					}
 				},
 				atancante: {
-					nombre:'yoda',
+					nombre:'Yoda',
 					ataque:'Golpe con sable',
 				},
 				defensor:{
@@ -51,12 +87,7 @@ class Simulator {
 				}
 			});
 
-			this.players.simulateTurn(this.turn,this.turnIncrease.bind(this));
-
-			this.validateBattleState();
-
-		//},this.turnDuration);
-		},1000);
+		this.turnIncrease();
 	}
 
 	onFinish(){
@@ -68,7 +99,7 @@ class Simulator {
 	}
 
 	validateBattleState(){
-		if( this.turn === 3 ){
+		if( this.turn === 10 ){
 			clearInterval(this.simulation);
 			this.onFinish();
 		}

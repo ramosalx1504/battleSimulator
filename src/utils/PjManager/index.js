@@ -16,7 +16,7 @@ class PjManager {
 
 		let data = this.makeNewTurn();
 
-		if(callback) callback();
+		if(callback) callback(data);
 	}
 
 	makeNewTurn(){
@@ -28,6 +28,7 @@ class PjManager {
 		if( this.pj1TurnStatus === 0 ){
 
 			this.pj1TurnStatus = 1;
+			this.pj2TurnStatus = 0;
 			return {
 				atacante :{
 					id:this.pj1.id,
@@ -53,7 +54,6 @@ class PjManager {
 				}
 			};
 		} 
-
 	}
 
 	findPjById(id){

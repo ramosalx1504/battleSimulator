@@ -39,7 +39,9 @@ export default ( state = initialStoreState, action ) => {
 			return { 
 				...state, 
 				dataListItems : newArray,
-				turno: action.payload.turno 
+				turno: action.payload.turno,
+				pj1State : action.payload.pjsState.pj1,
+				pj2State : action.payload.pjsState.pj2 
 			};
 
 		default : 
