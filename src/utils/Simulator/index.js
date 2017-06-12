@@ -63,7 +63,6 @@ class Simulator {
 	}
 
 	onSimulateTurn(data){
-
 		this.onTurnFinishCallback({
 				turno : this.turn,
 				pjsState:{
@@ -74,14 +73,8 @@ class Simulator {
 						'life':Math.random()
 					}
 				},
-				atancante: {
-					nombre:'Yoda',
-					ataque:'Golpe con sable',
-				},
-				defensor:{
-					nombre :'dart',
-					defensa: 'falla',
-				},
+				atacante : data.atacante,
+				defensor  : data.defensor,
 				resultado:{
 					battleStatus : 'runing',
 				}

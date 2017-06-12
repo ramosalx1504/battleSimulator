@@ -21,6 +21,13 @@ class PjManager {
 
 	makeNewTurn(){
 		let {atacante,defensor} = this.getTurnRoles();
+
+		//manipular aqui los datos del turno
+
+		return {
+			atacante,
+			defensor
+		};
 	}
 
 	getTurnRoles(){
@@ -49,7 +56,7 @@ class PjManager {
 					ataques:[]
 				},
 				defensor:{
-					id:this.pj1,
+					id:this.pj1.id,
 					defensas:[]
 				}
 			};

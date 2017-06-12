@@ -53,6 +53,6 @@ const makeNewDataItem = (payload) => {
 	return {
 		key: payload.turno,
 		value:payload,
-		text:'ataque'+ payload.turno
+		text: payload.turno+' ->atacante'+payload.atacante.id+' - defensor:'+payload.defensor.id
 	};
 }
