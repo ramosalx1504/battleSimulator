@@ -5,6 +5,10 @@ const deviceWidth = Dimensions.get('window').width;
 
 const gridSize = 8;
 
+const widthPercentage = (number) => {
+  return number * deviceWidth /100;
+}
+
 export default {
   font: {
     size: {
@@ -35,6 +39,8 @@ export default {
     sith: 'rgba(255,19,19,0.4)',
     jedi: 'rgba(41,208,254,0.4)',
     jediGreen : 'rgba(99,229,71,0.9)',
+    green:'green',
+    red:'red'
   },
   grid: {
     x1: gridSize * 1,
@@ -55,7 +61,8 @@ export default {
     touchableHeight: 48,
     visibleButtonHeight: 36,
     width : deviceWidth,
-    height : deviceHeight
+    height : deviceHeight,
+    widthPercentage: widthPercentage
   },
   router:{
     paddingTop:54,
@@ -72,5 +79,10 @@ export default {
       width : 1,
       color: 'lightgray'
     }
+  },
+  border:{
+      radius : 4,
+      width : 1,
+      color: 'lightgray'
   }
 };

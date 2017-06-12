@@ -4,24 +4,62 @@
 
 class PjManager {
 
-	constructor( pjID1 = 0, pjID2 = 0){
+	constructor( pjID1, pjID2 ){
 
-		this.pj1 = pjID1;
-		this.pj2 = pjID2;
-
+		this.pj1 = this.findPjById(pjID1);
+		this.pj2 = this.findPjById(pjID2);
+		this.pj1TurnStatus = 0;
+		this.pj2TurnStatus = 0;
 	}
 
 	simulateTurn( turn, callback){
-		console.log("simulando turno",turn,this.pj1.name,this.pj2.name);
-		console.log("ataca con y defiende tanto");
-		console.log('resutlado calculado con calculator');
-		console.log();
+
+		let data = this.makeNewTurn();
 
 		if(callback) callback();
 	}
 
-	pjConsoleViewer(pjID){
-		console.log(typeof pjs);
+	makeNewTurn(){
+		let {atacante,defensor} = this.getTurnRoles();
+	}
+
+	getTurnRoles(){
+
+		if( this.pj1TurnStatus === 0 ){
+
+			this.pj1TurnStatus = 1;
+			return {
+				atacante :{
+					id:this.pj1.id,
+					ataques:[]
+				},
+				defensor:{
+					id:this.pj2.id,
+					defensas:[]
+				}
+			};
+
+		} else if(this.pj2TurnStatus === 0){
+			this.pj2TurnStatus = 1;
+			this.pj1TurnStatus = 0;
+			return {
+				atacante :{
+					id:this.pj2.id,
+					ataques:[]
+				},
+				defensor:{
+					id:this.pj1,
+					defensas:[]
+				}
+			};
+		} 
+
+	}
+
+	findPjById(id){
+		return pjs.find(( value )=>{
+			return value.id == id;
+		});
 	}
 }
 

@@ -7,10 +7,18 @@ export default ( state = initialStoreState, action ) => {
 	switch( action.type ){
 		case 'updateAppName' :
 			let newArray = state.array.slice();
-			newArray.push(action.payload); 
-			return { ...state, appName : action.payload, array : newArray };
+			newArray.unshift(pushNewResult(action.payload)); 
+			return { ...state, array : newArray };
 
 		default : 
 			return state;
 	}
+}
+
+const pushNewResult = (payload) => {
+	return {
+		key: payload.turno,
+		value:payload,
+		text:'ataque'+ payload.turno
+	};
 }
