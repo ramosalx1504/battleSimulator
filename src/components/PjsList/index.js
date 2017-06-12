@@ -1,43 +1,32 @@
+
 import React from 'react';
 import { View,Text,Card,CardItem,Left,Body,Right,Thumbnail } from 'native-base';
 import { ListView, Image,FlatList } from 'react-native';
+import pjs from 'simulador/src/data/pjs.json';
 
-const data = [{
-				name:'Yoda',
-				description:'Midiendo 66 centímetros, Yoda fue un representante masculino de una especie',
-				logo:require('simulador/assets/logos/sithLogo.png'),
-				atributes:{
-					strench:20,
-					smart:5
-				}
-			},{
-				name:'nombre',
-				description:'asd asd asd asjdnoa asjdnasoid asidb asoydb oias',
-				logo:require('simulador/assets/logos/jediLogo.png'),
-				atributes:{
-					strench:20,
-					smart:5
-				}
-			},{
-				name:'nombre',
-				description:'asd asd asd asjdnoa asjdnasoid asidb asoydb oias',
-				logo:require('simulador/assets/logos/jediLogo.png'),
-				atributes:{
-					strench:20,
-					smart:5
-				}
-			}];
 
 class  PjsList extends React.Component {
+
+	constructor(props) {
+		super(props);
+
+		this.data = this.extract(this.props.data);
+	}
+
+	extract( data ){
+		return pjs.filter((value) => {
+			return value.orden === data;
+		});
+	}
 
 	renderRow(rowData){
 		return (
 			<Card>
 				<CardItem style={{flex:0}}>
 					<Left>
-						<Thumbnail source={rowData.logo} />
+						
 						<Body>
-							<Text style={{color:'black'}}>{rowData.name}</Text>
+							<Text style={{color:'black'}}>{rowData.nombre}</Text>
 						</Body>
 					</Left>
 				</CardItem>
@@ -49,18 +38,12 @@ class  PjsList extends React.Component {
 			</Card>
 		);
 	}
-	backup(){
-		<ListView
-					initialListSize={3}
-					dataSource={this.state.dataSource}
-        			renderRow={(rowData) => this.renderRow(rowData)}
-				/>
-	}
+
 	render(){
 		return (
 			<View style={s.container}>
 				<FlatList
-				  data={data}
+				  data={this.data}
 				  renderItem={({item}) => this.renderRow(item) }
 				/>
 			</View>

@@ -31,35 +31,11 @@ class Simulator {
 
 		this.simulation = setInterval(()=>{
 
-			// callback({
-			// 	turno : this.turn,
-			// 	pjsState:{
-			// 		pj1:{
-			// 			'life':Math.random()
-			// 		},
-			// 		pj2:{
-			// 			'life':Math.random()
-			// 		}
-			// 	},
-			// 	atancante: {
-			// 		nombre:'Yoda',
-			// 		ataque:'Golpe con sable',
-			// 	},
-			// 	defensor:{
-			// 		nombre :'dart',
-			// 		defensa: 'falla',
-			// 	},
-			// 	resultado:{
-			// 		battleStatus : 'runing',
-			// 	}
-			// });
-
 			this.players.simulateTurn(this.turn,this.onSimulateTurn.bind(this));
 
 			this.validateBattleState();
 
-		//},this.turnDuration);
-		},1000);
+		},this.turnDuration);
 	}
 
 	onSimulateTurn(data){
