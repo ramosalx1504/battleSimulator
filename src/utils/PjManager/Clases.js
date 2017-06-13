@@ -2,6 +2,7 @@ export
 class Defensor {
 	constructor(){
 		this.id = null;
+		this.nombre = null;
 		this.defensas = null;
 		this.acierta = false;
 		this.defensaUsada = null; 
@@ -20,7 +21,9 @@ class Defensor {
 export
 class Atacante {
 	constructor() {
+		this.key = null;
 		this.id = null;
+		this.nombre = null;
 		this.tiposDeAtaque  = null;
 		this.acierta = false;
 		this.ataqueUsado = null;

@@ -84,10 +84,13 @@ class PjManager {
 			this.pj2TurnStatus = 0;
 
 			atacante.id = this.pj1.id;
+			atacante.key = 1;
+			atacante.nombre = this.pj1.nombre;
 			atacante.acierta = Calculator.acierto(this.pj1.ataque);
 			atacante.tiposDeAtaque = this.pj1.tiposDeAtaque;
 
 			defensor.id = this.pj2.id;
+			defensor.nombre = this.pj2.nombre;
 			defensor.defensas = Calculator.defensa(this.pj2.defensa);
 
 			this.currentDefensor = this.pj2Status;
@@ -97,10 +100,13 @@ class PjManager {
 				   this.pj1TurnStatus = 0;
 
 			atacante.id = this.pj2.id;
+			atacante.key = 0;
+			atacante.nombre = this.pj2.nombre;
 			atacante.acierta = Calculator.acierto(this.pj2.ataque);
 			atacante.tiposDeAtaque = this.pj2.tiposDeAtaque;
 
 			defensor.id = this.pj1.id;
+			defensor.nombre = this.pj1.nombre;
 			defensor.defensas = Calculator.defensa(this.pj1.defensa);
 
 			this.currentDefensor = this.pj1Status;

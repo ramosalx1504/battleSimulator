@@ -41,10 +41,10 @@ class Simulation extends Component {
 	}
 
 
-	renderItem(data,index){
+	renderItem(data){
 		return (
 			<ListItem
-				text={data.text}
+				data={data}
 			/>
 		);
 	}

@@ -16,7 +16,7 @@ class Main extends React.Component {
 	_handlePressButton( id ){
 		switch(id){
 			case 'newBattle' :
-				return Router.simulation();
+				return Router.battle();
 			case 'moreInfo' :
 				return Router.about();
 			case 'ordenJedi' :

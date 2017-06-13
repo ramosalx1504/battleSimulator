@@ -1,8 +1,8 @@
 export default {
 	simulation : {
 		turn : {
-			duration : 1000,
-			turnMaximum : 60
+			duration : 2000,
+			turnMaximum : 1
 		},
 	}
 }

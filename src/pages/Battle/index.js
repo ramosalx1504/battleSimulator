@@ -10,7 +10,9 @@ import {
 class Battle extends Component {
   render() {
     return (
-      <View></View>
+      <View>
+      	
+      </View>
     );
   }
 }

@@ -50,9 +50,13 @@ export default ( state = initialStoreState, action ) => {
 }
 
 const makeNewDataItem = (payload) => {
+	console.log(payload);
 	return {
 		key: payload.turno,
 		value:payload,
-		text: payload.turno+' ->atacante'+payload.atacante.id+' - defensor:'+payload.defensor.id
+		text: payload.turno+' ->atacante'+payload.atacante.id+' - defensor:'+payload.defensor.id,
+		atacante: payload.atacante,
+		defensor: payload.defensor,
+		
 	};
 }

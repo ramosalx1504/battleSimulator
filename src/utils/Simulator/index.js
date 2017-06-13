@@ -19,6 +19,7 @@ class Simulator {
 		this.players = new PjManager( idPersonaje1, idPersonaje2 );
 		this.onFinishCallback = onFinishCallback;
 		this.onTurnFinishCallback = null;
+		this.maxNumberOfTurns = Settings.turnMaximum;
 	}
 
 	getTurno(){
@@ -32,8 +33,6 @@ class Simulator {
 		this.simulation = setInterval(()=>{
 
 			this.players.simulateTurn(this.turn,this.onSimulateTurn.bind(this));
-
-			this.validateBattleState();
 
 		},this.turnDuration);
 	}
@@ -57,6 +56,8 @@ class Simulator {
 			});
 
 		this.turnIncrease();
+
+		this.validateBattleState(pj1State.life,pj2State.life);
 	}
 
 	onFinish(){
@@ -68,10 +69,14 @@ class Simulator {
 	}
 
 	validateBattleState(){
-		if( this.turn === 10 ){
+		if( this.turn === this.maxNumberOfTurns || this.validateEndOfBattle( arguments ) ){
 			clearInterval(this.simulation);
 			this.onFinish();
 		}
+	}
+
+	validateEndOfBattle( life ){
+		return ( life[0] === 0 || life[1] === 0 ) ? true : false;
 	}
 
 	viewPjs(){
