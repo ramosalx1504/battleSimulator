@@ -16,7 +16,7 @@ class Simulator {
 		this.turn = 0;
 		this.simulation = null;
 		this.turnDuration = Settings.simulation.turn.duration;
-		this.players = new PjManager( idPersonaje1, idPersonaje2);
+		this.players = new PjManager( idPersonaje1, idPersonaje2 );
 		this.onFinishCallback = onFinishCallback;
 		this.onTurnFinishCallback = null;
 	}
@@ -38,19 +38,19 @@ class Simulator {
 		},this.turnDuration);
 	}
 
-	onSimulateTurn(data){
+	onSimulateTurn({atacante,defensor,pj1State,pj2State}){
 		this.onTurnFinishCallback({
 				turno : this.turn,
 				pjsState:{
 					pj1:{
-						'life':Math.random()
+						'life': pj1State.life
 					},
 					pj2:{
-						'life':Math.random()
+						'life': pj2State.life
 					}
 				},
-				atacante : data.atacante,
-				defensor  : data.defensor,
+				atacante,
+				defensor,
 				resultado:{
 					battleStatus : 'runing',
 				}
