@@ -6,18 +6,10 @@ import { PjsList } from 'simulador/src/components';
 
 class CharactersTabs extends React.Component {
 
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			activeTab : props.origin === 'Jedi' ? 0 : 1
-		};
-	}
-
 	render() {
 		return (
 			<View style={s.container}>
-				<Tabs initialPage={ this.state.activeTab }>
+				<Tabs initialPage={ this.props.origin === 'Jedi' ? 0 : 1 }>
 					<Tab heading='Orden Jedi'>
 						<PjsList data='Jedi' />
 					</Tab>
