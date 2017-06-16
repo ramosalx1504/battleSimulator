@@ -35,7 +35,6 @@ class PjManager {
 		let data = Calculator.getTurnResult(this.getTurnRoles());
 
 		let { atacante, defensor } = this.updatePjStatus(data);
-		console.log(this.pj1Status,this.pj2Status);
 		return {
 			atacante,
 			defensor,
@@ -88,6 +87,8 @@ class PjManager {
 			atacante.nombre = this.pj1.nombre;
 			atacante.acierta = Calculator.acierto(this.pj1.ataque);
 			atacante.tiposDeAtaque = this.pj1.tiposDeAtaque;
+			atacante.vidaRestante = this.pj1Status.life;
+			atacante.critico = this.pj1.critico;
 
 			defensor.id = this.pj2.id;
 			defensor.nombre = this.pj2.nombre;
@@ -104,6 +105,8 @@ class PjManager {
 			atacante.nombre = this.pj2.nombre;
 			atacante.acierta = Calculator.acierto(this.pj2.ataque);
 			atacante.tiposDeAtaque = this.pj2.tiposDeAtaque;
+			atacante.vidaRestante = this.pj2Status.life;
+			atacante.critico = this.pj2.critico;
 
 			defensor.id = this.pj1.id;
 			defensor.nombre = this.pj1.nombre;

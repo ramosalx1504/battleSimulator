@@ -13,6 +13,10 @@ class Calculator {
 		return ( rn <= acertar ) ? true : false; 
 	}
 
+	aciertaCritico( obj ){
+		return true;
+	}
+
 	defensa( array ){
 
 		let rn = this.getRandom();
@@ -54,6 +58,10 @@ class Calculator {
 	}
 
 	getTurnResult({ atacante, defensor }){
+
+		if(atacante.vidaRestante <= 0.1){
+			atacante.setCritico(this.aciertaCritico(atacante.critico));
+		}
 
 		atacante.setAttack(this.randomAttack(atacante.acierta,atacante.tiposDeAtaque));
 		defensor.setDefensa(defensor.defensas.defensaUsada);

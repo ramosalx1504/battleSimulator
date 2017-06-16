@@ -5,7 +5,8 @@ class Defensor {
 		this.nombre = null;
 		this.defensas = null;
 		this.acierta = false;
-		this.defensaUsada = null; 
+		this.defensaUsada = null;
+
 	}
 
 	setDefensa(data){
@@ -27,10 +28,17 @@ class Atacante {
 		this.tiposDeAtaque  = null;
 		this.acierta = false;
 		this.ataqueUsado = null;
+		this.vidaRestante = null;
+		this.critico = null;
+		this.aciertaCritico = null; 
 
 	}
 
 	setAttack( data ){
 		this.ataqueUsado = data; 
+	}
+
+	setCritico(data){
+		this.aciertaCritico = data;
 	}
 }

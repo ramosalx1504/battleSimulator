@@ -64,11 +64,13 @@ class Simulation extends Component {
 
 		return (
 			<View style={s.container}>
-				<Button block onPress={()=>this._handleSimulation()}>
-					<Text>
-						Start Battle
-					</Text>
-				</Button>
+				<View style={s.wrapButton}>
+					<Button success block onPress={()=>this._handleSimulation()}>
+						<Text>
+							Start Battle
+						</Text>
+					</Button>
+				</View>
 				<Header 
 					name1={pj1Info.nombre}
 					name2={pj2Info.nombre}
@@ -90,6 +92,10 @@ class Simulation extends Component {
 const s = {
 	container:{
 		flex:1
+	},
+	wrapButton:{
+		padding:16,
+		paddingBottom:0
 	}
 };
 
