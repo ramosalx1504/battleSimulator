@@ -1,37 +1,49 @@
+import { 
+	SET_TURN_DATA, 
+	SETPJ_1, SETPJ_2, 
+	START_BATTLE, 
+	END_BATTLE 
+} from '../types/battle';
+
 const initialStoreState = {
 	dataListItems:[],
 	turno:null,
 	pj1Info:{
 		id:null,
-		name:'Yoda'
+		name: null
 	},
-	pj2Info:{
+	pj2Info:{ 
 		id:null,
-		name:'Yoda'
+		name: null
 	},
-	pj1State:{
-		life : 1
-	},
-	pj2State:{
-		life : 1
-	},
-	currentBattleState: 0
+	pj1State:{ life : 1 },
+	pj2State:{ life : 1	},
+	currentBattleState: null
 }
 
 export default ( state = initialStoreState, action ) => {
 
 	switch( action.type ){
 
-		case 'setPj1' :
-			return state;
+		case SETPJ_1 :
+			return {
+				...state,
+				pj1Info : action.payload
+			};
 
-		case 'setPj2' :
-			return state;
+		case SETPJ_2 :
+			return {
+				...state,
+				pj2Info : action.payload
+			};
 
-		case 'changeBattleState' :
-			return { ...state, currentBattleState : action.payload };
+		case START_BATTLE :
+			return { 
+				...state, 
+				currentBattleState : action.payload 
+			};
 
-		case 'setTurnData' :
+		case SET_TURN_DATA :
 			
 			let newArray = state.dataListItems.slice();
 				newArray.unshift(makeNewDataItem(action.payload)); 
@@ -50,13 +62,11 @@ export default ( state = initialStoreState, action ) => {
 }
 
 const makeNewDataItem = (payload) => {
-	console.log(payload);
 	return {
 		key: payload.turno,
 		value:payload,
 		text: payload.turno+' ->atacante'+payload.atacante.id+' - defensor:'+payload.defensor.id,
 		atacante: payload.atacante,
 		defensor: payload.defensor,
-		
 	};
 }

@@ -15,7 +15,7 @@ export default Habilidades;
 
 const StarsBar = ({number,title}) => {
 	
-	var stars = [];
+	let stars = [];
 
 	for( let i = 0; i < number; i++ ){
 		stars.push(<Icon name={'star'} style={s.icon} key={i}/>);
