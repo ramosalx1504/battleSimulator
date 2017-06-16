@@ -60,7 +60,7 @@ class PjSelector extends React.Component {
                        renderRow={this.renderRow.bind(this)}
                        renderSeparator={(sectionID, rowID, adjacentRowHighlighted) => this.renderSeparator(sectionID, rowID, adjacentRowHighlighted)}
         >
-          <Text style={{color:'white'}}>{this.getDataToShow()}</Text>
+          <Text style={s.selectedText}>{this.getDataToShow()}</Text>
         </ModalDropdown>
 			</View>
 		);
@@ -130,4 +130,7 @@ const s = {
     height: 1,
     backgroundColor: 'cornflowerblue',
   },
+  selectedText:{
+    alignSelf:'center'
+  }
 };
