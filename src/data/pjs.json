@@ -447,12 +447,12 @@
       {
         "nombre": "Bloqueo con sable",
         "probabilidad": 0.30,
-        "resistencia": 0
+        "resistencia": 15
       },
       {
         "nombre": "Truco mental",
         "probabilidad": 0.30,
-        "resistencia": 0
+        "resistencia": 100
       }
     ],
     "critico": {
