@@ -1,6 +1,7 @@
 import { 
 	SET_TURN_DATA, 
-	SETPJ_1, SETPJ_2, 
+	SETPJ_1, 
+	SETPJ_2, 
 	START_BATTLE, 
 	END_BATTLE 
 } from '../types/battle';
@@ -8,14 +9,8 @@ import {
 const initialStoreState = {
 	dataListItems:[],
 	turno:null,
-	pj1Info:{
-		id:null,
-		name: null
-	},
-	pj2Info:{ 
-		id:null,
-		name: null
-	},
+	pj1Info:null,
+	pj2Info:null,
 	pj1State:{ life : 1 },
 	pj2State:{ life : 1	},
 	currentBattleState: null

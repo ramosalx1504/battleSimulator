@@ -5,78 +5,74 @@ import { appStyle } from 'simulador/config';
 
 import ModalDropdown from 'react-native-modal-dropdown';
 
-const DEMO_OPTIONS_2 = [
-  {"name": "Rex", "age": 30},
-  {"name": "Mary", "age": 25},
-  {"name": "John", "age": 41},
-  {"name": "Jim", "age": 22},
-  {"name": "Susan", "age": 52},
-  {"name": "Brent", "age": 33},
-  {"name": "Alex", "age": 16},
-  {"name": "Ian", "age": 20},
-  {"name": "Phil", "age": 24},
-];
+import pjs from 'simulador/src/data/pjs.json';
+import imagenes from 'simulador/src/data/imagenes';
+
 
 class PjSelector extends React.Component {
 
 	constructor(props) {
 	  super(props);
-	
-	  this.state = {};
+	  this.data = this.extract(this.props.data);
 	}
 
-	renderRow(item){
-		return (
-			<View>
-				<Text>{item}</Text>
-			</View>
-		);
-	}
-	_dropdown_2_renderRow(rowData, rowID, highlighted) {
+  extract( data ){
+    return pjs.filter((value) => {
+      return value.orden === data;
+    });
+  }
+
+	renderRow(rowData, rowID, highlighted) {
     let icon = highlighted ? require('../../../../assets/icon.png') : require('../../../../assets/icon.png');
     let evenRow = rowID % 2;
     return (
       <TouchableHighlight underlayColor='cornflowerblue'>
-        <View style={[s.dropdown_2_row, {backgroundColor: evenRow ? 'lemonchiffon' : 'white'}]}>
+        <View style={{...s.dropdown_2_row, ...{backgroundColor: evenRow ? 'lightgray' : 'white'}}}>
           <Image style={s.dropdown_2_image}
                  mode='stretch'
-                 source={icon}
+                 source={imagenes[rowData.id]}
           />
-          <Text style={[s.dropdown_2_row_text, highlighted && {color: 'mediumaquamarine'}]}>
-            {`${rowData.name} (${rowData.age})`}
+          <Text style={{...s.dropdown_2_row_text}}>
+            {`${rowData.nombre}`}
           </Text>
         </View>
       </TouchableHighlight>
     );
   }
-  _dropdown_2_renderSeparator(sectionID, rowID, adjacentRowHighlighted) {
-    if (rowID == DEMO_OPTIONS_2.length - 1) return;
+
+  renderSeparator(sectionID, rowID, adjacentRowHighlighted) {
+    if (rowID == this.data.length - 1) return;
     let key = `spr_${rowID}`;
-    return (<View style={s.dropdown_2_separator}
+    return (<View style={s.separator}
                   key={key}
     />);
   }
 	render(){
-		const {data,onSelect} = this.props;
+		const {data,onSelect,selected} = this.props;
 		return (
 			<View style={s.container}>
-	 			<ModalDropdown 
-					options={data}
-					onSelect={onSelect}
-					style={s.style}
-					textStyle={s.textStyle}
-					dropdownStyle={s.dropdownStyle}
-				/>
-				<ModalDropdown style={s.dropdown_2}
-                           textStyle={s.dropdown_2_text}
-                           dropdownStyle={s.dropdown_2_dropdown}
-                           options={DEMO_OPTIONS_2}
-                           renderRow={this._dropdown_2_renderRow.bind(this)}
-                           renderSeparator={(sectionID, rowID, adjacentRowHighlighted) => this._dropdown_2_renderSeparator(sectionID, rowID, adjacentRowHighlighted)}
-            />
+				<ModalDropdown 
+                       onSelect={onSelect}
+                       style={s.dropdown_2}
+                       textStyle={s.dropdown_2_text}
+                       dropdownStyle={s.dropdown_2_dropdown}
+                       options={this.data}
+                       renderRow={this.renderRow.bind(this)}
+                       renderSeparator={(sectionID, rowID, adjacentRowHighlighted) => this.renderSeparator(sectionID, rowID, adjacentRowHighlighted)}
+        >
+          <Text style={{color:'white'}}>{this.getDataToShow()}</Text>
+        </ModalDropdown>
 			</View>
 		);
 	}
+
+  getDataToShow(){
+    if(this.props.selected == null ){
+      return 'Selecccione un Personaje...';
+    }else{
+      return this.props.selected.nombre
+    }
+  }
 }
 
 export default PjSelector;
@@ -96,13 +92,7 @@ const s = {
 		padding : appStyle.grid.x2
 	},
 	dropdown_2: {
-    alignSelf: 'flex-end',
-    width: 150,
-    top: 32,
-    right: 8,
-    borderWidth: 0,
-    borderRadius: 3,
-    backgroundColor: 'red',
+    padding : appStyle.grid.x2,
   },
   dropdown_2_text: {
     marginVertical: 10,
@@ -113,29 +103,30 @@ const s = {
     textAlignVertical: 'center',
   },
   dropdown_2_dropdown: {
-    width: 150,
-    height: 300,
-    borderColor: 'cornflowerblue',
-    borderWidth: 2,
-    borderRadius: 3,
+    width: appStyle.dimensions.width - appStyle.grid.x4,
+    height :60*3+5,
+    borderColor: 'white',
+    borderWidth: 1,
+    borderRadius: 4,
   },
   dropdown_2_row: {
     flexDirection: 'row',
-    height: 40,
+    height: 60,
     alignItems: 'center',
   },
   dropdown_2_image: {
-    marginLeft: 4,
-    width: 30,
-    height: 30,
+    marginLeft: 8,
+    width: 40,
+    height: 40,
+    borderRadius:20
   },
   dropdown_2_row_text: {
-    marginHorizontal: 4,
+    marginHorizontal: 16,
     fontSize: 16,
     color: 'navy',
     textAlignVertical: 'center',
   },
-  dropdown_2_separator: {
+  separator: {
     height: 1,
     backgroundColor: 'cornflowerblue',
   },

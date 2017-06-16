@@ -28,7 +28,9 @@ class Simulation extends Component {
 	}
 
 	_handleSimulation(){
-		var simulacion = new Simulator( 2, 7, this._onBattleFinish.bind(this));
+		const { pj1Info, pj2Info } = this.props.battle;
+
+		var simulacion = new Simulator( pj1Info.id, pj2Info.id, this._onBattleFinish.bind(this));
 			simulacion.start(this._onTurnEnd.bind(this));
 	}
 
@@ -68,8 +70,8 @@ class Simulation extends Component {
 					</Text>
 				</Button>
 				<Header 
-					name1={pj1Info.name}
-					name2={pj2Info.name}
+					name1={pj1Info.nombre}
+					name2={pj2Info.nombre}
 					vidaPj1={pj1State.life}
 					vidaPj2={pj2State.life}
 					turno={turno}

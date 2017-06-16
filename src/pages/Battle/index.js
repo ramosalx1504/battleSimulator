@@ -9,7 +9,7 @@
 /**
  * Data 
  */ import { setPj1, setPj2 } from 'simulador/src/data/actions/BattleActions';
-	import pjs from 'simulador/src/data/pjs.json';
+	
 
 
 class Battle extends Component {
@@ -17,14 +17,31 @@ class Battle extends Component {
 	constructor(props) {
 	  super(props);
 	
-	  this.state = {};
+	  this.state = {
+	  	pj1Selected: null,
+	  	pj1Selected: null
+	  };
 	}
 
 	_handlePressButton(){
 		Router.simulation();
 	}
 
+	_handleSelection(pj,value){
+		switch (pj) {
+			case 'pj1':
+				this.props.setPj1(value);
+				break;
+			case 'pj2':
+				this.props.setPj2(value);
+				break;
+		}
+	}
+
 	render() {
+
+		const { pj1Info,pj2Info } = this.props.battle;
+
 		return (
 		  <View style={s.f1}>
 		  	<Text>Esta es la vista de selección de personajes</Text>
@@ -32,8 +49,16 @@ class Battle extends Component {
 		  		<Text>Ir a vista de batalla</Text>
 		  	</Button>
 		  	<PjSelector
-		  		onSelect={(selected)=>console.log(selected)} 
-		  		data={['Yoda']}
+		  		selected={pj1Info}
+		  		data={'Jedi'}
+		  		color={'blue'}
+		  		onSelect={(index,value)=>this._handleSelection('pj1',value)}
+		  	/>
+		  	<PjSelector
+		  		selected={pj2Info}
+		  		data={'Sith'}
+		  		color={'red'}
+		  		onSelect={(index,value)=>this._handleSelection('pj2',value)}
 		  	/>
 		  </View>
 		);
@@ -47,4 +72,4 @@ const s = {
 };
 
 const mapStateToProps = ({battle}) => ({battle});
-export default connect(mapStateToProps,{})(Battle);
+export default connect(mapStateToProps,{setPj2,setPj1})(Battle);
