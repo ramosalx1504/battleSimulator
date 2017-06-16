@@ -108,12 +108,12 @@ export default {
   cardDefaultBg: "#fff",
 
   // Color
-  brandPrimary: '#3F51B5',
-  brandInfo: 'rgba(0,30,79,0.6)',
-  brandSuccess: '#5cb85c',
-  brandDanger: '#d9534f',
-  brandWarning: '#f0ad4e',
-  brandSidebar: '#252932',
+  brandPrimary: "#3F51B5",
+  brandInfo: "#3F57D3",
+  brandSuccess: "#5cb85c",
+  brandDanger: "#d9534f",
+  brandWarning: "#f0ad4e",
+  brandSidebar: "#252932",
 
   // Font
   fontFamily: "Roboto",

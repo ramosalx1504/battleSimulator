@@ -14,6 +14,12 @@
 
 class Battle extends Component {
 
+	constructor(props) {
+	  super(props);
+	
+	  this.state = {};
+	}
+
 	_handlePressButton(){
 		Router.simulation();
 	}
@@ -27,7 +33,7 @@ class Battle extends Component {
 		  	</Button>
 		  	<PjSelector
 		  		onSelect={(selected)=>console.log(selected)} 
-		  		data={['Yoda']
+		  		data={['Yoda']}
 		  	/>
 		  </View>
 		);
